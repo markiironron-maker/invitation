@@ -1,0 +1,71 @@
+<title>You're Invited!</title>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <titleYou're Invited!</title>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: #fff4f2;
+      font-family: Arial, sans-serif;
+      color: #352b2b;
+    }
+
+    .invitation {
+      width: min(90%, 420px);
+      padding: 2.5rem;
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px #00000018;
+    }
+
+    h1 { color: #c44c65; }
+    .date { font-weight: bold; margin: 1.5rem 0; }
+
+    button {
+      margin: 0.4rem;
+      padding: 0.8rem 1.5rem;
+      border: 0;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    #yes { background: #c44c65; }
+    #no { background: #777; }
+    #response { min-height: 1.5em; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <main class="invitation">
+    <h1>You're Invited!</h1>
+    <p>Join us for <strong>My Celebration</strong>.</p>
+    <p class="date">Saturday, [your event date] · [time] · [location]</p>
+    <p>Can you make it?</p>
+
+    <button id="yes" type="button">Yes!</button>
+    <button id="no" type="button">No</button>
+
+    <p id="response" aria-live="polite"></p>
+  </main>
+
+  <script>
+    const response = document.getElementById("response");
+
+    document.getElementById("yes").addEventListener("click", () => {
+      response.textContent = "Wonderful! We look forward to seeing you.";
+    });
+
+    document.getElementById("no").addEventListener("click", () => {
+      response.textContent = "Thanks for letting us know.";
+    });
+  </script>
+</body>
+</html>
